@@ -2,6 +2,9 @@
   "name": "monitors",
   "version": "1.0.0",
   "description": "it is just monitors",
+  "engines": {
+    "node": ">=8"
+  },
   "main": "src/index.js",
   "repository": "https://github.com/nickccm1122/monitors",
   "author": "Nick Chan",

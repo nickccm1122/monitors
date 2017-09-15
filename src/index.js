@@ -15,5 +15,6 @@ const app = new Koa()
 
 app.listen(config.port, () => {
   logger.info('Server started..')
+
   triplehGameCron.start()
 })
