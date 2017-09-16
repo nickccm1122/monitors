@@ -54,7 +54,7 @@ module.exports = new CronJon({
       if (!rankings) {
         await notifier.sendMessage(`RankingPage is not working!!!`)
       } else {
-        await notifier.sendMessage(JSON.stringify(R.slice(0, 3, rankings), null, 2))
+        // await notifier.sendMessage(JSON.stringify(R.slice(0, 3, rankings), null, 2))
       }
     } catch (e) {
       logger.error(e)
