@@ -13,7 +13,8 @@
     "lint": "standard",
     "git-hook": "lint-staged",
     "precommit": "yarn git-hook",
-    "start": "node $npm_package_main"
+    "start": "node $npm_package_main",
+    "start:dev": "NODE_ENV=development node $npm_package_main"
   },
   "dependencies": {
     "axios": "^0.16.2",
