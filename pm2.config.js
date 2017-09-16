@@ -23,7 +23,7 @@ module.exports = {
     production: {
       user: 'ubuntu',
       host: ['monitors'],
-      path: '/srv',
+      path: `/srv/${pkg.name}`,
       ref: 'origin/master',
       repo: 'git@github.com:nickccm1122/monitors.git',
       'post-deploy': 'yarn',
