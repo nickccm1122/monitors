@@ -19,6 +19,6 @@ process.on('unhandledRejection', error => {
   logger.error('unhandledRejection', error.stack)
 })
 
-process.on('SIGTERM', () => {
+process.on('SIGINT', () => {
   triplehGameCron.stop()
 })
