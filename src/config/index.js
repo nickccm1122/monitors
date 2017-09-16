@@ -14,7 +14,7 @@ const config = {
   development: {
     cron: {
       triplehGameCron: {
-        cronTime: '*/15 * * * * *', // every 15 mins
+        cronTime: '*/15 * * * * *', // every 15 secs
         browserOption: {
           headless: false,
           slowMo: 250
