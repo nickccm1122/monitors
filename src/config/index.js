@@ -21,6 +21,17 @@ const config = {
         }
       }
     }
+  },
+  production: {
+    cron: {
+      triplehGameCron: {
+        cronTime: '*/15 * * * * *', // every 15 mins
+        browserOption: {
+          headless: true,
+          slowMo: false
+        }
+      }
+    }
   }
 }
 
