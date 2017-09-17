@@ -13,7 +13,7 @@ const triplehGameCrawling = require(`${rootPath}/src/lamdas/triplehGameCrawling`
 const triplehGameCron = {
   start: () => {
     const cronName = 'triplehCrawling'
-    const cronExpression = '* */3 * * * *'
+    const cronExpression = '00 */3 * * * *'
 
     const interval = cronParser.parseExpression(cronExpression)
     logger.info(`Next ${cronName} will be performed at ${interval.next().toString()}`)
