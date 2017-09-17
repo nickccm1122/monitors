@@ -26,7 +26,7 @@ module.exports = {
       path: `/srv/${pkg.name}`,
       ref: 'origin/master',
       repo: 'git@github.com:nickccm1122/monitors.git',
-      'post-deploy': 'whoami',
+      'post-deploy': 'echo $SHELL',
       env: {
         NODE_ENV: 'production'
       }
