@@ -26,7 +26,7 @@ module.exports = {
       path: `/srv/${pkg.name}`,
       ref: 'origin/master',
       repo: 'git@github.com:nickccm1122/monitors.git',
-      'post-deploy': '. \\~/.zshrc\\; node --version && which npm',
+      'post-deploy': '. \\~/.zshrc\\; yarn;',
       env: {
         NODE_ENV: 'production'
       }
