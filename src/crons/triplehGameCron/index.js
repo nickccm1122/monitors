@@ -1,6 +1,7 @@
 'use strict'
 
 const moment = require('moment-timezone')
+const cronParser = require('cron-parser')
 const rootPath = require('pkg-dir').sync(__dirname)
 const schedule = require('node-schedule')
 
@@ -11,9 +12,15 @@ const triplehGameCrawling = require(`${rootPath}/src/lamdas/triplehGameCrawling`
 
 const triplehGameCron = {
   start: () => {
+    const cronName = 'triplehCrawling'
+    const cronExpression = '* */3 * * * *'
+
+    const interval = cronParser.parseExpression(cronExpression)
+    logger.info(`Next ${cronName} will be performed at ${interval.next().toString()}`)
+
     const job = schedule.scheduleJob({
       end: moment.tz('2017-09-24', config.momentTimeZone),
-      rule: '* */3 * * * *'
+      rule: cronExpression
     }, async () => {
       try {
         const rankings = await triplehGameCrawling()
@@ -22,7 +29,7 @@ const triplehGameCron = {
           await notifier.sendMessage(`RankingPage is not working!!!`)
         }
 
-        logger.info(`next crawling will be performed at ${job.nextInvocation()}`)
+        logger.info(`Next ${cronName} will be performed at ${job.nextInvocation()}`)
       } catch (e) {
         logger.error(e)
       }
